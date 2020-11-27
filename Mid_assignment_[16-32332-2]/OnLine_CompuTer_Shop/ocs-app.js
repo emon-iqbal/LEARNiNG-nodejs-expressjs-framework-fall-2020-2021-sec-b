@@ -26,6 +26,9 @@ app.use ('/ocsReg', ocsRegistration);
 app.use ('/ocsLogin', ocsLogin);
 app.use ('/admin_LogouT', admin_logout);
 app.use ('/admin_DASHBOARD', admin_dashboard);
+app.use ('/customer_LogouT', customer_logout);
+app.use ('/customer_DASHBOARD', customer_dashboard);
+
 //app.use(express.static(__dirname+"/"));
 
 //router definition
