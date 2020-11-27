@@ -1,10 +1,10 @@
 {
-  "name": "travel-bliss",
+  "name": "online_computer_shop",
   "version": "1.0.0",
-  "description": "MVC travel APP using nodejs",
-  "main": "td-app.js",
+  "description": "MVC APP using nodejs",
+  "main": "ocs-app.js",
   "scripts": {
-    "emon": "nodemon td-app.js"
+    "emon": "nodemon ocs-app.js"
   },
   "author": "emon-iqbal",
   "license": "ISC",
@@ -23,13 +23,13 @@
   "devDependencies": {},
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/emon-iqbal/APWT_PROJECT_G1_MiD.git"
+    "url": "git+https://github.com/emon-iqbal/LEARNiNG-nodejs-expressjs-framework-fall-2020-2021-sec-b"
   },
   "keywords": [
     "apwt"
   ],
   "bugs": {
-    "url": "https://github.com/emon-iqbal/APWT_PROJECT_G1_MiD/issues"
+    "url": "https://github.com/emon-iqbal/LEARNiNG-nodejs-expressjs-framework-fall-2020-2021-sec-b/issues"
   },
-  "homepage": "https://github.com/emon-iqbal/APWT_PROJECT_G1_MiD#readme"
+  "homepage": "https://github.com/emon-iqbal/LEARNiNG-nodejs-expressjs-framework-fall-2020-2021-sec-b#readme"
 }
