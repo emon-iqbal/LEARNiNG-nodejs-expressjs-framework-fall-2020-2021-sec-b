@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>UPDATE REGIONS</title>
+  <link rel="stylesheet" type="text/css" href="/DEALit/CSS/TD_List.css">
+  <!-- <script type="text/javascript" src="/DEALit/js/val_TD.js"></script> -->
+</head>
+
+<body><center>
+	<form name="myform" onsubmit="return insertCheck();" method="POST">
+
+    <table border="5">
+      <tr>
+        <td colspan="2"><div id="of"><h1><center>UPDATE REGIONS</center></h1></div></td>
+      </tr>
+
+      <tr>
+				<td>ID</td>
+				<td><input type="text" readonly name="td_id" value="<%=td.td_id%>"></td>
+			</tr>
+			<tr>
+				<td>Traveler - NAME</td>
+				<td><input type="text" name="t_name" value="<%=td.t_name%>" onkeypress='return onlyalphabets(event)'></td>
+			</tr>
+			<tr>
+  				<td>Visited PLACE</td>
+  				<td><input type="text" name="v_place" value="<%=td.v_place%>"></td>
+      </tr>
+      <tr>
+				<td>Vehicle name</td>
+				<td><input type="text" name="vehicle" value="<%=td.vehicle%>"> </td>
+			</tr>
+      <tr>
+				<td>DURATION</td>
+				<td><input type="text" name="duration" value="<%=td.duration%>"></td>
+			</tr>
+      <tr>
+				<td>TOTAL COST</td>
+				<td><input type="number" name="cost" value="<%= td.cost %>"></td>
+      </tr>
+      <tr>
+				<td>date</td>
+				<td><input type="date" name="date" value="<%= td.date %>"></td>
+			</tr>
+      <tr></tr>
+			<tr>
+				<td><div id="upom"><a href="/td_DASHBOARD/TD_Traveled_Regions">Check RegionLIST</a> </div></td>
+				<td><div id="upom"><input type="submit" id="submit" name="submit" value="UPDATE" onclick="insert()"></div></td>
+			</tr>
+	</table>
+
+  <script type="text/javascript">
+
+      /*ASCII code: 65-90>> UPPERCASE
+      8>>   Backspace,
+      95>>  underscore[_]*/
+
+      function onlyalphabets(e)
+      {
+      var t_name=e.which||e.keycode;
+        if((t_name>=65 && t_name<=90) || (t_name==95) || (t_name>=97 && t_name<=122) || t_name==8)
+        {
+          return true;
+        }
+        else
+        {
+          alert('ONLY A-Z || a-z || _ [underscore] || and ~Backspace~ button is available for this name field ');
+          return false;
+        }
+      }
+  </script>
+
+  <script type="text/javascript">
+    function insertCheck()
+    {
+      var name        = document.getElementById('t_name').value;
+      var place        = document.getElementById('v_place').value;
+      var vehicle     = document.getElementById('vehicle').value;
+      var duration   = document.getElementById('duration').value;
+      var cost         = document.getElementById('cost').value;
+      var date        = document.getElementById('date').value;
+
+      if(name == "")
+      {
+        alert('PLEASE FILL THE Traveler_NAME to proceed');
+        return false;
+      }
+      if(place == "")
+      {
+        alert('PLEASE FILL THE VISITED PLACE');
+        return false;
+      }
+      if(vehicle == "")
+      {
+        alert('PLEASE FILL THE vehicle name to proceed');
+        return false;
+      }
+      if(duration == "")
+      {
+        alert('PLEASE FILL THE DURATION OF TRAVEL to proceed');
+        return false;
+      }
+      if(cost == "")
+      {
+        alert('PLEASE FILL THE TOTAL Expense to proceed');
+        return false;
+      }
+      if(date == "")
+      {
+        alert('PLEASE FILL THE Departure Date to proceed');
+        return false;
+      }
+      if(name.length<4)
+      {
+        alert('Name must be at least 4 characters to be valid in this field');
+        return false;
+      }
+      if(name.length>15)
+      {
+        alert('Name must be less than 15 characters to be valid in this field');
+        return false;
+      }
+      else
+      {
+        return true;
+      }
+
+    }
+
+  </script>
+
+  </form>
+</center></body>
+</html>
+
+
+
+
+<!-- <style type="text/css">
+table{
+	color: whitesmoke;
+	background-color: blue;
+}
+#upom
+{
+	text-align: center;
+	color: whitesmoke;
+	background-color: orange;
+	background-size: auto;
+	border: 10px solid;
+}
+#upom a
+{
+	color: black;
+	font-size: 20px;
+}
+</style> -->

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>ADD NEW REGIONS</title>
+  <link rel="stylesheet" type="text/css" href="/DEALit/css/tdinsert.css">
+	<script type="text/javascript" src="/DEALit/js/val_Regions.js"></script>
+</head>
+
+<body><center>
+
+	<form id="tdinsert" method="post" onsubmit="return insertCheck(); ">
+
+
+		<h1>NEW REGIONS</h1>
+		<div>
+			 <input type="text" id="r_name" name="r_name" placeholder="REGION_ NAME" onkeypress='return onlyalphabets(event)'/>
+		</div>
+		<div>
+			 <input type="text" id="country" name="country" placeholder="COUNTRY of Mentioned Region">
+		</div>
+		<div>
+			<input type="text" id="continent" name="continent" placeholder="Continent">
+		</div>
+		<div>
+			<input type="number" id="r_code" name="r_code" placeholder="Area Code" min="0">
+		</div>
+		<br>
+		<div>
+			<button type="submit" id="submit" name="submit" onclick="insert()">I N S E R T</button>
+			<a href="/td_DASHBOARD/TD_Available_Regions">Region-List</a>
+		</div>
+  </form>
+
+</center></body>
+</html>

@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>ADD NEW RECORD OF TRAVELER</title>
+  <link rel="stylesheet" type="text/css" href="/DEALit/css/tdinsert.css">
+</head>
+
+<body><center>
+
+	<form id="Tinsert_form" method="post" onsubmit="return insertCheck(); ">
+
+
+		<h1>NEW TRAVELED REGIONS</h1>
+		<div>
+			 <input type="text" id="t_name" name="t_name" placeholder="TRAVELER_ NAME" onkeypress='return onlyalphabets(event)'/>
+		</div>
+		<div>
+			 <input type="text" id="v_place" name="v_place" placeholder="COUNTRY OF MENTIONED REGION">
+		</div>
+		<div>
+			<input type="text" id="vehicle" name="vehicle" placeholder="VEHICLE USED FOR TRAVEL">
+		</div>
+		<div>
+			<input type="text" id="duration" name="duration" placeholder="TOTAL DAYS OF TRAVEL">
+		</div>
+    <div>
+			<input type="number" id="cost" name="cost" placeholder="TOTAL EXPENSE OF TRAVEL">
+		</div>
+    <div>
+			<input type="date" id="date" name="date" placeholder="DEPARTURE DATE">
+		</div>
+		<br>
+		<div>
+			<button type="submit" id="submit" name="submit" onclick="insert()">I N S E R T</button>
+			<a href="/td_DASHBOARD/TD_Traveled_Regions">Region-List</a>
+		</div>
+
+<script type="text/javascript">
+
+    /*ASCII code: 65-90>> UPPERCASE
+    8>>   Backspace,
+    95>>  underscore[_]*/
+
+    function onlyalphabets(e)
+    {
+    var t_name=e.which||e.keycode;
+      if((t_name>=65 && t_name<=90) || (t_name==95) || (t_name>=97 && t_name<=122) || t_name==8)
+      {
+        return true;
+      }
+      else
+      {
+        alert('ONLY A-Z || a-z || _ [underscore] || and ~Backspace~ button is available for this name field ');
+        return false;
+      }
+    }
+</script>
+
+<script type="text/javascript">
+  function insertCheck()
+  {
+    var name        = document.getElementById('t_name').value;
+    var place        = document.getElementById('v_place').value;
+    var vehicle     = document.getElementById('vehicle').value;
+    var duration   = document.getElementById('duration').value;
+    var cost         = document.getElementById('cost').value;
+    var date        = document.getElementById('date').value;
+
+    if(name == "")
+    {
+      alert('PLEASE FILL THE Traveler_NAME to proceed');
+      return false;
+    }
+    if(place == "")
+    {
+      alert('PLEASE FILL THE VISITED PLACE');
+      return false;
+    }
+    if(vehicle == "")
+    {
+      alert('PLEASE FILL THE vehicle name to proceed');
+      return false;
+    }
+    if(duration == "")
+    {
+      alert('PLEASE FILL THE DURATION OF TRAVEL to proceed');
+      return false;
+    }
+    if(cost == "")
+    {
+      alert('PLEASE FILL THE TOTAL Expense to proceed');
+      return false;
+    }
+    if(date == "")
+    {
+      alert('PLEASE FILL THE Departure Date to proceed');
+      return false;
+    }
+    if(name.length<4)
+    {
+      alert('Name must be at least 4 characters to be valid in this field');
+      return false;
+    }
+    if(name.length>15)
+    {
+      alert('Name must be less than 15 characters to be valid in this field');
+      return false;
+    }
+    else
+    {
+      return true;
+    }
+
+  }
+
+</script>
+
+  </form>
+</center></body>
+</html>
