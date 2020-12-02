@@ -2,10 +2,10 @@ var db = require('./db');
 
 module.exports = {
 
-	get: function(td_id, callback)
+	get: function(userID, callback)
 	{
-		var sql = "select * from td_regions where td_id=?";
-		db.getResults(sql, [td_id], function(result)
+		var sql = "select * from components where userID=?";
+		db.getResults(sql, [userID], function(result)
 		{
 				if(result.length > 0)
 				{
@@ -20,7 +20,7 @@ module.exports = {
 
 	getAll: function(callback)
 	{
-			var sql = "select * from td_regions";
+			var sql = "select * from components";
 			db.getResults(sql, null, function(result)
 			{
 					if(result.length > 0)
@@ -46,31 +46,30 @@ module.exports = {
 // 	},
 
 
-	validate: function(td, callback)
+	validate: (user, callback) =>
 	{
-		var sql = "select * from td_list where td_name=? and type='Trans_Dealer'";
-		db.getResults(sql, [td.td_name, td.type], (result) =>
-		{
-			 if(result.length > 0)
-			 {
-				 console.log("LIST FOR TRANSPORT DEALERS FOUND SUCCESFULLY !~_~! ");
-				 callback(true);
-			 }
-			 else
-			 {
-				 callback(false);
-			 }
-		});
-	},
-
+			var sql = "select * from user_table where username=? and password=? and userType='admin'";
+			db.getResults(sql, [user.username, user.password, user.userType], (result) =>
+			{
+					if(result.length > 0)
+					{
+						console.log("YOU ARE LOGGED IN ~ TO THE HOME OF ~ ADMIN ~ S U C C E S F U L L Y !~_~! ");
+						callback(true);
+					}
+					else
+					{
+						callback(false);
+					}
+			});
+	 },
 
 //>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 
 update: function(td, callback)
 {
-	var sql = "update td_regions set  r_name=?, country=?, continent=?, r_code=? where td_id=?";
+	var sql = "update components set  c_name=?, c_catagories=?, c_types=?, c_brands=?, c_m_reviews=?, c_COST=? where userID=?";
 
-  db.execute(sql, [td.v_name, td.v_type, td.v_distance, td.v_cost, td.td_id], (status) =>
+  db.execute(sql, [td.c_name, td.c_cat, td.c_type, td.c_brand, td.cm_reviews, td.c_cost, td.userID], (status) =>
 	{
     if(status)
 		{
@@ -87,9 +86,9 @@ update: function(td, callback)
 
 insert: function(td, callback)
 	{
-		var sql = "insert into td_regions values(?, ?, ?, ?, ?)";
+		var sql = "insert into components values(?, ?, ?, ?, ?, ?, ?)";
 
-		db.execute(sql, ['', td.v_name, td.v_type, td.v_distance, td.v_cost], (status) =>
+		db.execute(sql, ['', td.c_name, td.c_cat, td.c_type, td.c_brand, td.cm_reviews, td.c_cost], (status) =>
 		{
 			if(status)
 			{
@@ -105,7 +104,7 @@ insert: function(td, callback)
 
 delete: function(td, callback)
 	{
-		var sql = "delete from td_regions where td_id=?";
+		var sql = "delete from components where userID=?";
 		db.execute(sql, [td], (status) =>
 		{
 			if(status)
@@ -118,25 +117,5 @@ delete: function(td, callback)
 				callback(false);
 			}
 		});
-	},
-
-search: function (key, callback)
-{
-		var sql = "SELECT * FROM td_regions WHERE r_name LIKE '" + key + "%' ";
-		console.log(sql);
-		db.getResults(sql, function (results)
-		{
-				console.log("dataset length " + results.length);
-					if (results.length > 0)
-					{
-							callback(results);
-					}
-					else
-					{
-							callback(false);
-					}
-		});
-}
-
-
+	}
 }

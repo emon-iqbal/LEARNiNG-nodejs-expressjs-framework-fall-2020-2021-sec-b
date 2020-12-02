@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>ADMIN PROFILE</title>
+ 	<link rel="stylesheet" type="text/css" href="/DEALit/css/TD_Profile.css">
+
+</head>
+
+<body><center>
+
+		<table border="4">
+				<tr>
+					<td><center><div id = "p1"><a href ="/admin_DASHBOARD/adminPHOTO">PROFILE  PIC</a></div></center></td>
+				</tr>
+		</table>
+
+		<table border="5">
+				<tr>
+					<td colspan="2"><h1>Admin_PROFILE</h1></td>
+				</tr>
+				<tr>
+					<td><b>ID: </b></td>
+					<td><div id="td"><%= ocsUsers.userID %></div></td>
+				</tr>
+				<tr>
+					<td><b>Username: </b></td>
+					<td><div id="td"><%= ocsUsers.username %></div></td>
+				</tr>
+				<tr>
+					<td><b>Password: </b></td>
+					<td><div id="td"><%= ocsUsers.password %></div></td>
+				</tr>
+				<tr>
+					<td><div id="td"><b>Type: </b></div></td>
+					<td><%= ocsUsers.userType %></td>
+				</tr>
+				<tr>
+					<td><b>Email: </b></td>
+					<td><div id="td"><%= ocsUsers.email %></div></td>
+				</tr>
+				<tr>
+					<td><div id="home"><a href="/admin_DASHBOARD">H O M E</a></div></td>
+					<td colspan="2"><center>
+							<div id="wh"><a href="/admin_DASHBOARD/Admin_Profile/update/<%= ocsUsers.userID %>"> U P D A T E</a></div>
+					</center></td>
+				</tr>
+		</table>
+
+</center></body>
+</html>

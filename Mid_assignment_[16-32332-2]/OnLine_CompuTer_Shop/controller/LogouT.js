@@ -3,7 +3,7 @@ var router = express.Router();
 
 router.get('/', function(req, res){
 	req.session.username = null;
-	res.redirect('/tdLogin');
+	res.redirect('/ocsLogin');
 });
 
 module.exports = router;

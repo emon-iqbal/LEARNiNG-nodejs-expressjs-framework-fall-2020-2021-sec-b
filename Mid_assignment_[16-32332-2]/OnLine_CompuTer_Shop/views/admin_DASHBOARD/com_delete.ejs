@@ -3,7 +3,6 @@
 <head>
 	<title>DELETE CONFIRMATION</title>
 	<link rel="stylesheet" type="text/css" href="/DEALit/css/pic.css">
-
 </head>
 
 <body><center>
@@ -16,23 +15,31 @@
 
 		<tr>
 				<td>ID</td>
-				<td><%= td.td_id %></td>
+				<td><%= td.userID %></td>
 			</tr>
 			<tr>
 				<td>NAME</td>
-      <td><%= td.td_name %></td>
+      <td><%= td.c_name %></td>
       </tr>
       <tr>
-				<td>EMAiL</td>
-				<td><%= td.email %></td>
+				<td>Catagories</td>
+				<td><%= td.c_catagories %></td>
 			</tr>
-      <tr>
-				<td>GENDER</td>
-				<td><%= td.gender %></td>
+			<tr>
+				<td>Types</td>
+				<td><%= td.c_types %></td>
 			</tr>
-      <tr>
-				<td>EDUCATION</td>
-				<td><%= td.education %></td>
+			<tr>
+				<td>Brands</td>
+				<td><%= td.c_brands %></td>
+			</tr>
+			<tr>
+				<td>Reviews</td>
+				<td><%= td.c_m_reviews %></td>
+			</tr>
+			<tr>
+				<td>Costs</td>
+				<td><%= td.c_COST %></td>
 			</tr>
 		</table>
     <br>
@@ -42,9 +49,9 @@
         <td colspan="3"><div id="tab2"><h2>YOU WANT TO DELETE THE ENTIRE ROW? YOU CANNOT UNDO !!</h2></div></td>
       </tr>
       <tr>
-        <td><input type="hidden" name="td_id" value="<%= td.td_id %>"></td>
+        <td><input type="hidden" name="userID" value="<%= td.userID %>"></td>
 <td><div id="link"><input type="submit" name="submit" value="D E L E T E"></div></td>
-        <td><div id="link"><a href="/td_DASHBOARD/TD_Lists">BACK TO TD_LIST</a></div></td>
+        <td><div id="link"><a href="/admin_DASHBOARD/Components">BACK TO COMPONENTS_LIST</a></div></td>
       </tr>
     </table>
 

@@ -8,7 +8,7 @@ function getConnection(callback)
 	  host     : 'localhost',
 	  user     : 'root',
 	  password : '',
-	  database : 'travelbliss_apwt'
+	  database : 'o_computer_shop'
 	});
 
 	connection.connect(function(err)

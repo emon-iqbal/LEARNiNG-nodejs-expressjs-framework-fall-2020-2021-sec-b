@@ -1,13 +1,13 @@
 var express 	= require('express');
 //var uploadModel 	= require.main.require('./models/upload');
-var regModel 	= require.main.require('./models/TraveLBLiss_users');
+var regModel 	= require.main.require('./models/ocsUsers.js');
 var upload = require('express-fileupload');
 var router 		= express.Router();
 
 
 router.get('/', (req, res) =>
 {
-		res.render('tdRegistration/tdReg');
+		res.render('ocsReg/ocsReg');
 });
 
 router.post('/', (req, res) =>
@@ -31,10 +31,8 @@ router.post('/', (req, res) =>
 									var user =	{
 										username		  : req.body.username,
 										password		  : req.body.password,
+										userType			: req.body.type,
 										email						 : req.body.email,
-										gender				 : req.body.gender,
-										education			: req.body.education,
-										type						 : req.body.type,
 
 														filename 	: filename
 
@@ -44,11 +42,11 @@ router.post('/', (req, res) =>
 									{
 												if(status)
 												{
-														res.redirect('/tdLogin');
+														res.redirect('/ocsLogin');
 												}
 												else
 												{
-														res.redirect('/tdLogin');
+														res.redirect('/ocsLogin');
 												}
 										});
 							}

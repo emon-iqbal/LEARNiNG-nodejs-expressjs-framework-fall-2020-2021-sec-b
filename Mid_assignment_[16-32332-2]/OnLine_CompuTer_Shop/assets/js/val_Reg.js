@@ -26,6 +26,14 @@ function valid()
 				return false;
 			}
 
+			var type = document.forms["myform"]["type"].value;
+
+			if(type=="")
+			{
+				alert("Type is BLANK !!");
+				return false;
+			}
+
 			var email = document.forms["myform"]["email"].value;
 
 			if(email=="")
@@ -42,30 +50,6 @@ function valid()
 					return false;
 			}
 
-			var gender = document.forms["myform"]["gender"].value;
-
-			if(gender=="")
-			{
-				alert("Gender is BLANK !!");
-				return false;
-			}
-
-			var education = document.forms["myform"]["education"].value;
-
-			if(education=="")
-			{
-				alert("Education is BLANK !!");
-				return false;
-			}
-
-			var type = document.forms["myform"]["type"].value;
-
-			if(type=="")
-			{
-				alert("Type is BLANK !!");
-				return false;
-			}
-
 			var file = document.forms["myform"]["file"].value;
 
 			if(file=="")
@@ -76,19 +60,16 @@ function valid()
 
 }
 
-
-
 function onlyalphabets(e)
 {
 		var name=e.which||e.keycode;
 
-
-	/*ASCII code: 		65-90>> UPPERCASE
-										97-122>> lowercase
-										8>>   	Backspace,
-										95>>  	underscore[_]
-										32>>	space
-	*/
+						/*ASCII code: 		65-90>> UPPERCASE
+															97-122>> lowercase
+															8>>   	Backspace,
+															95>>  	underscore[_]
+					 										32>>	space
+						*/
 
 			if((name>=65 && name<=90) || (name==95) || (name==32) || (name>=97 && name<=122) || (name==8))
 			{

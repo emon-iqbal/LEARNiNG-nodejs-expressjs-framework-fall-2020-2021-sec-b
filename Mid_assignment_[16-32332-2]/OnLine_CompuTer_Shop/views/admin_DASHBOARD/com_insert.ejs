@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>ADD NEW Components</title>
+  <link rel="stylesheet" type="text/css" href="/DEALit/css/newtd.css">
+	<script type="text/javascript" src="/DEALit/js/val_TD.js"></script>
+</head>
+
+<body><center>
+<form id="tdinsert" name="myform" method="post" onsubmit="return insertCheck(); ">
+		<div>
+			<h1>NEW Components</h1>
+		</div>
+		<div id="tinsert">
+				<input type="text" id="cname" name="c_name" placeholder="Component NAME" />
+		</div>
+		<div id="tinsert">
+				<input type="text" id="cats" name="c_cats" placeholder="Component Catagories" />
+		</div>
+		<div id="tinsert">
+				<input type="text" id="type" name="c_types" placeholder="Component Types" />
+		</div>
+		<div id="tinsert">
+				<input type="text" id="brand" name="c_brands" placeholder="Component Brand" />
+		</div>
+		<div id="tinsert">
+			 <input type="text" id="review" name="cm_reviews" placeholder="comments regrading this component">
+		 </div>
+		 <div id="tinsert">
+ 				<input type="number" id="cost" name="c_cost" placeholder="Cost" min="10"/>
+ 		</div>
+		<br>
+		<div>
+				<button type="submit" id="submit" name="submit" onclick="insert()">I N S E R T</button>
+				<a href="/admin_DASHBOARD/Components">COMPONENTS</a>
+		</div>
+
+</form>
+
+</center></body>
+</html>

@@ -1,7 +1,7 @@
 var express 	= require('express');
 const exValidator			= require ('express-validator');
-var userModel 	= require.main.require('./models/ocsUsers');
-//var cusModel 	= require.main.require('./models/ocsCustomers');
+var cusModel 	= require.main.require('./models/ocsCustomers');
+//var userModel 	= require.main.require('./models/ocsUsers');
 var router 		= express.Router();
 //var upload = require('express-fileupload');
 
@@ -18,15 +18,15 @@ router.post('/', function(req, res)
 							userType: req.body.type
 						};
 
-						userModel.validate(user, function(status)
+						cusModel.validate(user, function(status)
 						{
 							if(status)
 							{
-									if(user.userType=="admin")
+									if(user.userType=="customer")
 									{
 										req.session.username = user.username;
 										//console.log("iNVALiD user type SELECTED !! ");
-										res.redirect('/admin_DASHBOARD');
+										res.redirect('/customer_DASHBOARD');
 									}
 									else
 									{

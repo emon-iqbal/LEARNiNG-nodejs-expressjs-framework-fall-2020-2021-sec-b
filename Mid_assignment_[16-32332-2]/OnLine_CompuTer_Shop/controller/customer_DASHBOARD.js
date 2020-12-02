@@ -1,16 +1,9 @@
 const express 			= require ('express');
 const upload 					= require ('express-fileupload');
 const db 								= require.main.require ('./models/db');
-const userModel		 = require.main.require ('./models/TraveLBLiss_users');
-const usModel 			 = require.main.require ('./models/tdProfile');
-const tdModel 			 = require.main.require ('./models/tdList');
-const vModel 			 = require.main.require ('./models/tdVehicles');
-const rModel 					= require.main.require ('./models/tdRegions');
-const travModel 					= require.main.require ('./models/tdTraveled');
-
-// const t_SchModel 	= require.main.require ('./models/TP_Tsch.js');
-// const s_SchModel 	= require.main.require ('./models/TP_Ssch.js');
-const uploadModel 	= require.main.require('./models/upload');
+const userModel		 = require.main.require ('./models/ocsUsers');
+// const usModel 			 = require.main.require ('./models/tdProfile');
+// const tdModel 			 = require.main.require ('./models/tdList');
 
 const router		=		express.Router();
 
@@ -18,7 +11,7 @@ router.get('*', (req, res, next) =>
 {
 		if(req.session.username == null)
 		{
-			res.redirect('/tdLogin');
+			res.redirect('/ocsLogin');
 		}
 		else
 		{
@@ -29,14 +22,14 @@ router.get('*', (req, res, next) =>
 
 router.get('/', (req, res) =>
 {
-		res.render('td_DASHBOARD/td_DASHBOARD', {username: req.session.username});
+		res.render('admin_DASHBOARD/admin_DASHBOARD', {username: req.session.username});
 });
 
 
 //>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
-//>>>>>>>>>>>>>>get,post for TD_Profile>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+//>>>>>>>>>>>>>>get,post for admin_Profile>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 
-				router.get('/TD_Profile', (req, res) =>
+				router.get('/admin_Profile', (req, res) =>
 				{
 						var username = req.session.username;
 						userModel.getByUname(username, (results) =>

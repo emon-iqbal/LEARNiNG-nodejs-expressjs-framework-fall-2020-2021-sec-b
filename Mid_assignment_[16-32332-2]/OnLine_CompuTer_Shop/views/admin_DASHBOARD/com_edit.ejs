@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>UPDATE ComponentList</title>
+	<link rel="stylesheet" type="text/css" href="/DEALit/CSS/TD_List.css">
+	<script type="text/javascript" src="/DEALit/js/val_TD.js"></script>
+</head>
+<body><center>
+
+	<form id="tdinsert" name="myform"  method="POST" onsubmit="return upCheck()">
+
+    <table border="5">
+      <tr>
+        <td colspan="2"><div id="of"><h1><center>UPDATE ComponentList</center></h1></div></td>
+      </tr>
+
+      <tr>
+				<td>ID</td>
+				<td><input type="text" readonly name="userID" value="<%=td.userID%>"></td>
+			</tr>
+			<tr>
+				<td>Product - NAME</td>
+				<td><input type="text" id="cname" name="c_name" value="<%=td.c_name%>" ></td>
+			</tr>
+			<tr>
+				<td>Product - Catagories</td>
+				<td><input type="text" id="cats" name="c_cats" value="<%=td.c_catagories%>" ></td>
+			</tr>
+      <tr>
+				<td>Product - Types</td>
+				<td><input type="text" id="type" name="c_types" value="<%=td.c_types%>" ></td>
+			</tr>
+      <tr>
+				<td>Product - Brands</td>
+				<td><input type="text" id="brand" name="c_brands" value="<%=td.c_brands%>" ></td>
+			</tr>
+			<tr>
+				<td>Product - Reviews</td>
+				<td><input type="text" id="review" name="cm_reviews" value="<%=td.c_m_reviews%>" ></td>
+			</tr>
+			<tr>
+				<td>Product - Cost</td>
+				<td><input type="number" id="cost" name="c_cost" value="<%=td.c_COST%>" ></td>
+			</tr>
+      <tr></tr>
+
+			<tr>
+				<td><div id="of"><a href="/admin_DASHBOARD/Components">Check ComponentsLIST</a> </div></td>
+				<td><div id="upom"><input type="submit" id="submit" name="submit" value="UPDATE"></div></td>
+			</tr>
+
+	</table>
+
+  </form>
+
+</center></body>
+</html>
+
+
+
+
+<!-- <style type="text/css">
+table{
+	color: whitesmoke;
+	background-color: blue;
+}
+#upom
+{
+	text-align: center;
+	color: whitesmoke;
+	background-color: orange;
+	background-size: auto;
+	border: 10px solid;
+}
+#upom a
+{
+	color: black;
+	font-size: 20px;
+}
+</style> -->

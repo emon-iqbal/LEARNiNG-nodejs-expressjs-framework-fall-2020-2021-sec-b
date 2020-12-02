@@ -8,9 +8,8 @@ const apiResponse 	= require("express-api-response");
 const ocsLogin 								= require ('./controller/ocsLogin');
 const ocsRegistration 			= require ('./controller/ocsReg');
 const admin_dashboard 			= require  ('./controller/admin_DASHBOARD');
-const admin_logout 						= require  ('./controller/admin_LogouT');
 const customer_dashboard 			= require  ('./controller/customer_DASHBOARD');
-const customer_logout 						= require  ('./controller/customer_LogouT');
+const logout 												= require  ('./controller/LogouT');
 const app 											= express ();																//app variables
 
 
@@ -24,9 +23,8 @@ app.use (bodyParser.urlencoded({extended: true}));
 app.use (exSession({secret: 'my secret value', saveUninitialized: true, resave: false}));
 app.use ('/ocsReg', ocsRegistration);
 app.use ('/ocsLogin', ocsLogin);
-app.use ('/admin_LogouT', admin_logout);
 app.use ('/admin_DASHBOARD', admin_dashboard);
-app.use ('/customer_LogouT', customer_logout);
+app.use ('/LogouT', logout);
 app.use ('/customer_DASHBOARD', customer_dashboard);
 
 //app.use(express.static(__dirname+"/"));
