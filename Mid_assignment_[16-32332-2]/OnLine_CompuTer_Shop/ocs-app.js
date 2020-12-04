@@ -30,7 +30,8 @@ app.use ('/customer_DASHBOARD', customer_dashboard);
 //app.use(express.static(__dirname+"/"));
 
 //router definition
-app.get ('/', (req, res) => {
+app.get ('/', (req, res) => 
+{
 
 	res.send ("<br><br><br><center><table><tr><td><center><h1><font color='red'><u><b>EXPLORE YOUR PC TAKING THE LATEST COMPONENTS</b></u></h1></font><br><font color='blue'><h2>[[ Already a MEMBER? Hit The Login link<br>Not a MEMBER? no worries, make a Registration your way...]] </h2></font></center></td></tr><br><br><tr><td><center><h1><font color='red'><a href='/ocsLogin'> LOGiN</a> ~ ~ ~ <a href='/ocsReg'> Registration</a></center></h1></font></td></tr></table></center> ");
 

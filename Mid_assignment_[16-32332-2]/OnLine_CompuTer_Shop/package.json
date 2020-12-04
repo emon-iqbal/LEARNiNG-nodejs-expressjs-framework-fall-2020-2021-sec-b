@@ -25,7 +25,8 @@
     "type": "git",
     "url": "git+https://github.com/emon-iqbal/LEARNiNG-nodejs-expressjs-framework-fall-2020-2021-sec-b"
   },
-  "keywords": [
+  "keywords": 
+  [
     "apwt"
   ],
   "bugs": {
