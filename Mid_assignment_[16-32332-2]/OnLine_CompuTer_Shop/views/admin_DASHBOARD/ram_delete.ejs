@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>DELETE CONFIRMATION</title>
+	<link rel="stylesheet" type="text/css" href="/DEALit/css/pic.css">
+</head>
+
+<body><center>
+  <form method="post">
+
+	<table id="tab1" border="5">
+    <tr>
+       <td colspan="2"><h1><center>!!! D E L E T E  ???</center></h1></td>
+    </tr>
+
+		<tr>
+				<td>ID</td>
+				<td><%= ram.id %></td>
+			</tr>
+			<tr>
+				<td>NAME</td>
+      <td><%= ram.ram_name %></td>
+      </tr>
+      <tr>
+				<td>TYPE</td>
+				<td><%= ram.type %></td>
+			</tr>
+      <tr>
+				<td>CAPACITY</td>
+				<td><%= ram.capacity %></td>
+			</tr>
+			<tr>
+				<td>SPEED</td>
+				<td><%= ram.speed %></td>
+			</tr>
+			<tr>
+				<td>REVIEW</td>
+				<td><%= ram.manufacturer_review %></td>
+			</tr>
+			<tr>
+				<td>COST</td>
+				<td><%= ram.cost %></td>
+			</tr>
+		</table>
+    <br>
+
+    <table border="3">
+      <tr>
+        <td colspan="3"><div id="tab2"><h2>YOU WANT TO DELETE THE ENTIRE ROW? YOU CANNOT UNDO !!</h2></div></td>
+      </tr>
+      <tr>
+        <td><input type="hidden" name="id" value="<%= ram.id %>"></td>
+        <td><div id="link"><input type="submit" name="submit" value="D E L E T E"></div></td>
+        <td><div id="link"><a href="/admin_DASHBOARD/RAM_page">BACK TO RAM_LIST</a></div></td>
+      </tr>
+      <tr>
+        <td colspan="3"><center><img src="/DEALit/BackPics/<%= ram.picture %>"  height='100%' width='100%'/></center></td>
+      </tr>
+    </table>
+
+  </form>
+</center></body>
+</html>

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>UPDATE ComponentList</title>
+  <link rel="stylesheet" type="text/css" href="/DEALit/CSS/TD_List.css">
+  <script type="text/javascript" src="/DEALit/js/val_Ram.js"></script>
+</head>
+<body><center>
+
+	<form id="tdinsert" name="myform"  method="POST" onsubmit="return upCheck()">
+
+    <table border="5">
+        <tr>
+          <td colspan="2"><div id="of"><h1><center>UPDATE THIS RAM</center></h1></div></td>
+        </tr>
+
+        <tr>
+  				<td>ID</td>
+  				<td><input type="text" readonly name="id" value="<%= ram.id %>"></td>
+  			</tr>
+  			<tr>
+  				<td>RAM - NAME</td>
+  				<td><input type="text" id="rname" name="r_name" value="<%= ram.ram_name %>" ></td>
+  			</tr>
+        <tr>
+  				<td>RAM - Type</td>
+  				<td><input type="text" id="type" name="r_type" value="<%= ram.type %>" ></td>
+  			</tr>
+        <tr>
+  				<td>CAPACITY</td>
+  				<td><input type="text" id="cap" name="r_cap" value="<%= ram.capacity %>" ></td>
+  			</tr>
+        <tr>
+  				<td>SPEED</td>
+  				<td><input type="text" id="speed" name="r_speed" value="<%= ram.speed %>" ></td>
+  			</tr>
+  			<tr>
+  				<td>Manufacturer - Review</td>
+  				<td><input type="text" id="review" name="m_review" value="<%= ram.manufacturer_review %>" ></td>
+  			</tr>
+  			<tr>
+  				<td>Cost [ in  ... /- BDT {Taka} ]</td>
+  				<td><input type="number" id="cost" name="r_cost" value="<%= ram.cost %>" ></td>
+  			</tr>
+        <tr></tr>
+
+  			<tr>
+  				<td><div id="of"><a href="/admin_DASHBOARD/RAM_page">Check RAM ~ LIST</a> </div></td>
+  				<td><div id="upom"><input type="submit" id="submit" name="submit" value="UPDATE"></div></td>
+  			</tr>
+
+	   </table>
+
+  </form>
+</center></body>
+</html>
+
+
+
+
+<!-- <style type="text/css">
+table{
+	color: whitesmoke;
+	background-color: blue;
+}
+#upom
+{
+	text-align: center;
+	color: whitesmoke;
+	background-color: orange;
+	background-size: auto;
+	border: 10px solid;
+}
+#upom a
+{
+	color: black;
+	font-size: 20px;
+}
+</style> -->

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>ADD LATEST RAMS</title>
+  <link rel="stylesheet" type="text/css" href="/DEALit/css/newtd.css">
+	<script type="text/javascript" src="/DEALit/js/val_Ram.js"></script>
+</head>
+
+<body><center>
+<form id="tdinsert" name="myform" method="post" onsubmit="return insertCheck();" enctype="multipart/form-data">
+		<div>
+			<h1>I N S E R T   N E W  R A M S</h1>
+		</div>
+		<div id="tinsert">
+				<input type="text" id="rname" name="r_name" placeholder="RAM NAME" />
+		</div>
+    <div id="tinsert">
+				<input type="text" id="type" name="r_type" placeholder="Type OF Added Ram" />
+		</div>
+		<div id="tinsert">
+				<input type="text" id="cap" name="r_cap" placeholder="CAPACITY of NEW Ram" />
+		</div>
+		<div id="tinsert">
+				<input type="text" id="speed" name="r_speed" placeholder="RamSpeed" />
+		</div>
+		<div id="tinsert">
+			 <input type="text" id="review" name="m_review" placeholder="comments regrading the latest RAM">
+		 </div>
+		 <div id="tinsert">
+ 				<input type="number" id="cost" name="r_cost" placeholder="Cost/PRICE" min="10"/>
+ 		</div>
+    <div id="tinsert">
+				<input type="file" id="file" name="file" accept="" />
+		</div>
+		<br>
+		<div>
+				<button type="submit" id="submit" name="submit" onclick="insert()">I N S E R T</button>
+				<a href="/admin_DASHBOARD/RAM_page">RAM ~ LIST</a>
+		</div>
+
+</form>
+</center></body>
+</html>
