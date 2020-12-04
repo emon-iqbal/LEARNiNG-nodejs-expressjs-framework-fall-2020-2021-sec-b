@@ -65,57 +65,57 @@ module.exports = {
 
 //>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 
-update: function(td, callback)
-{
-	var sql = "update components set  c_name=?, c_catagories=?, c_types=?, c_brands=?, c_m_reviews=?, c_COST=? where userID=?";
-
-  db.execute(sql, [td.c_name, td.c_cat, td.c_type, td.c_brand, td.cm_reviews, td.c_cost, td.userID], (status) =>
+	update: function(td, callback)
 	{
-    if(status)
-		{
-			console.log("D A T A ~ UPDATED ~ S U C C E S F U L L Y !~_~! ");
-      callback(true);
-    }
-		else
-		{
-      callback(false);
-    }
-	});
+		var sql = "update components set  c_name=?, c_catagories=?, c_types=?, c_brands=?, c_m_reviews=?, c_COST=? where userID=?";
 
-},
-
-insert: function(td, callback)
-	{
-		var sql = "insert into components values(?, ?, ?, ?, ?, ?, ?)";
-
-		db.execute(sql, ['', td.c_name, td.c_cat, td.c_type, td.c_brand, td.cm_reviews, td.c_cost], (status) =>
+	  db.execute(sql, [td.c_name, td.c_cat, td.c_type, td.c_brand, td.cm_reviews, td.c_cost, td.userID], (status) =>
 		{
-			if(status)
+	    if(status)
 			{
-				console.log("D A T A ~ INSERTED ~ S U C C E S F U L L Y !~_~! ");
-				callback(true);
-			}
+				console.log("D A T A ~ UPDATED ~ S U C C E S F U L L Y !~_~! ");
+	      callback(true);
+	    }
 			else
 			{
-				callback(false);
-			}
+	      callback(false);
+	    }
 		});
+
 	},
 
-delete: function(td, callback)
-	{
-		var sql = "delete from components where userID=?";
-		db.execute(sql, [td], (status) =>
+	insert: function(td, callback)
 		{
-			if(status)
+			var sql = "insert into components values(?, ?, ?, ?, ?, ?, ?)";
+
+			db.execute(sql, ['', td.c_name, td.c_cat, td.c_type, td.c_brand, td.cm_reviews, td.c_cost], (status) =>
 			{
-				console.log("D A T A ~ REMOVED ~ S U C C E S F U L L Y !~_~! ");
-				callback(true);
-			}
-			else
+				if(status)
+				{
+					console.log("D A T A ~ INSERTED ~ S U C C E S F U L L Y !~_~! ");
+					callback(true);
+				}
+				else
+				{
+					callback(false);
+				}
+			});
+		},
+
+	delete: function(td, callback)
+		{
+			var sql = "delete from components where userID=?";
+			db.execute(sql, [td], (status) =>
 			{
-				callback(false);
-			}
-		});
-	}
+				if(status)
+				{
+					console.log("D A T A ~ REMOVED ~ S U C C E S F U L L Y !~_~! ");
+					callback(true);
+				}
+				else
+				{
+					callback(false);
+				}
+			});
+		}
 }
