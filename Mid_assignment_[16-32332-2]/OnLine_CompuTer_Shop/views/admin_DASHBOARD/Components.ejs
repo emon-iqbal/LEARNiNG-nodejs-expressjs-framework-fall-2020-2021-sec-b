@@ -13,7 +13,7 @@
 
 	<table border="5">
 		<tr>
-			<td><div id="of"><h1><center><a href="/Components/insert">ADD NEW Components</a></center></h1></div></td>
+			<td><div id="of"><h1><center><a href="/admin_DASHBOARD/Components/insert">ADD NEW Components</a></center></h1></div></td>
 			<td colspan="10"><h1>AVAILABLE COMPONENTS</h1>
 				<div id="no"><u>TOTAL COMPONENTS: <%= td.length %></u></div>
       </td>
@@ -33,7 +33,7 @@
 		<% for(var i=0; i < td.length; i++){ %>
 		<tr>
 			<td><%= td[i].userID %></td>
-			<td><%= td[i].c_name %></td>
+			<td><div id="show"><a href="/admin_DASHBOARD/COM_page"><%= td[i].c_name %></a></div></td>
 			<td><%= td[i].c_catagories %></td>
 			<td><%= td[i].c_types %></td>
 			<td><%= td[i].c_brands %></td>
